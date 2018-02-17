@@ -1,0 +1,54 @@
+apply plugin: 'com.android.library'
+apply plugin: 'me.tatarka.retrolambda'
+
+def config = rootProject.ext.android
+def libs = rootProject.ext.data
+
+android {
+    compileSdkVersion config.compileSdkVersion
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    defaultConfig {
+        minSdkVersion config.minSdkVersion
+        targetSdkVersion config.targetSdkVersion
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+        buildConfigField "String", "API_BASE_URL", Api
+
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    implementation libs.supportCompat
+    testImplementation libs.junit
+    androidTestImplementation libs.testRunner
+    androidTestImplementation libs.espresso
+    implementation libs.retrofit2
+    implementation libs.loggingRetrofit2
+    implementation libs.okHttp3
+    implementation libs.retrofitCallAdapter
+    implementation libs.gson
+    implementation libs.GsonConverter
+    implementation libs.arrow
+    implementation libs.javaxAnnotation
+    implementation libs.javaxInject
+
+    implementation project(':domain')
+}

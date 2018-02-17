@@ -1,0 +1,45 @@
+apply plugin: 'com.android.application'
+
+def libs = rootProject.ext.presentation
+def config = rootProject.ext.android
+
+android {
+    compileSdkVersion config.compileSdkVersion
+    defaultConfig {
+        applicationId "com.github.andromed.starwarswiki"
+        minSdkVersion config.minSdkVersion
+        targetSdkVersion config.targetSdkVersion
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation libs.supportCompat
+    implementation 'com.android.support.constraint:constraint-layout:1.0.2'
+    implementation 'com.android.support:support-v4:26.1.0'
+    testImplementation libs.junit
+    androidTestImplementation libs.testRunner
+    androidTestImplementation libs.espresso
+    implementation libs.rxAndroid
+
+    implementation libs.dagger
+    annotationProcessor libs.daggerCompiler
+
+    implementation libs.butterKnife
+    annotationProcessor libs.butterKnifeCompiler
+
+    implementation libs.sdp
+    implementation libs.ssp
+
+    implementation project(':data')
+    implementation project(':domain')
+}

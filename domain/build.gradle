@@ -1,0 +1,14 @@
+apply plugin: 'java-library'
+
+def libs = rootProject.ext.domain
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation libs.rxJava2
+    implementation libs.arrow
+    implementation libs.javaxAnnotation
+    implementation libs.javaxInject
+}
+
+sourceCompatibility = "1.8"
+targetCompatibility = "1.8"

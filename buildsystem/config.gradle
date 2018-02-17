@@ -1,0 +1,13 @@
+ext {
+    android = [
+            buildToolVersion : "26.0.0",
+            minSdkVersion    : 15,
+            targetSdkVersion : 26,
+            compileSdkVersion: 26
+    ]
+
+    // Api end points list
+    ApiEndPoints = [
+            Api = "\"http://www.mocky.io/v2/5927731b11000034066ccc7a\""
+    ]
+}

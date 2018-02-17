@@ -1,0 +1,80 @@
+allprojects {
+    repositories {
+        google()
+        jcenter()
+        maven { url "https://jitpack.io" }
+
+    }
+}
+
+ext {
+
+    supportCompat = "26.1.0"
+    junit = "4.12"
+    testRunner = "1.0.1"
+    espresso = "3.0.1"
+    dagger = '2.11'
+    butterKnife = "8.8.1"
+    sdp = "1.0.5"
+    ssp = "1.0.5"
+
+    rxJava2 = "2.1.7"
+    rxAndroid = '2.0.1'
+    arrow = "1.0.0"
+
+    retrofit2 = '2.3.0'
+    gsonConverter = "2.3.0"
+    gson = '2.8.1'
+    guava = "23.3-android"
+    okHttp3 = "3.9.1"
+    logginRetrofit2 = "3.9.1"
+    javaxAnnotation = '1.0'
+    javaxInject = '1'
+
+
+
+
+    presentation = [
+            supportCompat: "com.android.support:appcompat-v7:${supportCompat}",
+            junit        : "junit:junit:${junit}",
+            testRunner   : "com.android.support.test:runner:${testRunner}",
+            espresso     : "com.android.support.test.espresso:espresso-core:${espresso}",
+            dagger             : "com.google.dagger:dagger:${dagger}",
+            daggerCompiler     : "com.google.dagger:dagger-compiler:${dagger}",
+            butterKnife        : "com.jakewharton:butterknife:${butterKnife}",
+            butterKnifeCompiler: "com.jakewharton:butterknife-compiler:${butterKnife}",
+            sdp                : "com.intuit.sdp:sdp-android:${sdp}",
+            ssp                : "com.intuit.ssp:ssp-android:${ssp}",
+            javaxInject        : "javax.inject:javax.inject:${javaxInject}",
+            rxJava2            : "io.reactivex.rxjava2:rxjava:${rxJava2}",
+            rxAndroid          : "io.reactivex.rxjava2:rxandroid:${rxAndroid}",
+
+    ]
+
+    data = [
+            supportCompat      : "com.android.support:appcompat-v7:${supportCompat}",
+            junit              : "junit:junit:${junit}",
+            testRunner         : "com.android.support.test:runner:${testRunner}",
+            espresso           : "com.android.support.test.espresso:espresso-core:${espresso}",
+            rxJava2            : "io.reactivex.rxjava2:rxjava:${rxJava2}",
+            retrofit2          : "com.squareup.retrofit2:retrofit:${retrofit2}",
+            retrofitCallAdapter: "com.squareup.retrofit2:adapter-rxjava2:${retrofit2}",
+            GsonConverter      : "com.squareup.retrofit2:converter-gson:${gsonConverter}",
+            gson               : "com.google.code.gson:gson:${gson}",
+            arrow              : "com.fernandocejas:arrow:${arrow}",
+            javaxAnnotation    : "javax.annotation:jsr250-api:${javaxAnnotation}",
+            javaxInject        : "javax.inject:javax.inject:${javaxInject}",
+            guava              : "com.google.guava:guava:${guava}",
+            okHttp3            : "com.squareup.okhttp3:okhttp:${okHttp3}",
+            loggingRetrofit2   : "com.squareup.okhttp3:logging-interceptor:${logginRetrofit2}",
+
+    ]
+
+    domain = [
+            rxJava2: "io.reactivex.rxjava2:rxjava:${rxJava2}",
+            arrow  : "com.fernandocejas:arrow:${arrow}",
+            javaxAnnotation    : "javax.annotation:jsr250-api:${javaxAnnotation}",
+            javaxInject        : "javax.inject:javax.inject:${javaxInject}",
+            //rxAndroid          : "io.reactivex.rxjava2:rxandroid:${rxAndroid}",
+    ]
+}
